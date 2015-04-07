@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">"Ex Mensagens "</string>
+
+    <string name="mensagem">Mensagens</string>
+    <string name="quanto_tempo">Quanto ao Tempo</string>
+    <string name="quanto_posicao">Quanto a Posição</string>
+    <string name="action_settings">Settings</string>
+    <string name="tempo_curto">Tempo Curto</string>
+    <string name="tempo_longo">Tempo Longo</string>
+    <string name="mostra_mensagem">Mostra Mensagem</string>
+    <string name="centro">Centro</string>
+    <string name="em_baixo">Em Baixo</string>
+    <string name="em_cima">Em Cima</string>
+</resources>
