@@ -4,10 +4,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -17,6 +20,20 @@ public class PrincipalActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+        RadioGroup rGroup = (RadioGroup) findViewById(R.id.idRadioGroupTempo);
+        rGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                              public void onCheckedChanged(RadioGroup group, int id) {
+                                                  if (id == R.id.idRadioButtonTempoCurto)
+                                                      Toast.makeText(PrincipalActivity.this, "Você clicou em Curto", Toast.LENGTH_LONG).show();
+                                                  else if (id == R.id.idRadioButtonTempoLongo)
+                                                      Toast.makeText(PrincipalActivity.this, "Você clicou em Longo", Toast.LENGTH_LONG).show();
+                                              }
+                                          }
+
+        );
+
+
     }
 
     public void onClickMostraMensagem(View view) {
@@ -42,13 +59,25 @@ public class PrincipalActivity extends ActionBarActivity {
                 toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
                 break;
             case R.id.idRadioButtonEmBaixo:
-                toast.setGravity(Gravity.BOTTOM,  0, 0);
+                toast.setGravity(Gravity.BOTTOM, 0, 0);
                 break;
             case R.id.idRadioButtonEmCima:
-                toast.setGravity(Gravity.TOP, 0,0);
+                toast.setGravity(Gravity.TOP, 0, 0);
                 break;
         }
+        toast.show();
+    }
 
+
+    public void onCLickToastCustomizado(View view) {
+        LayoutInflater layoutInflater = getLayoutInflater();
+        //ViewGroup viewGroup = (ViewGroup) findViewById(R.id.toast_layout_referencia);
+        View viewA = layoutInflater.inflate(R.layout.toast, null);//viewGroup
+        TextView tv_texto = (TextView) viewA.findViewById(R.id.texto);
+        tv_texto.setText("Com Inflado");
+        Toast toast = new Toast(this);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(viewA);
         toast.show();
     }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">"Ex Mensagens "</string>
+    <string name="app_name">"Ex Mensagens - Toast"</string>
 
     <string name="mensagem">Mensagens</string>
     <string name="quanto_tempo">Quanto ao Tempo</string>
@@ -11,4 +11,5 @@
     <string name="centro">Centro</string>
     <string name="em_baixo">Em Baixo</string>
     <string name="em_cima">Em Cima</string>
+    <string name="toast_customisado">Toast Customisado</string>
 </resources>
